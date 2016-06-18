@@ -1,9 +1,9 @@
 # Documentr
 Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor with your mechanical keyboard! No more time wasted clicking through endless menus and prompts, or attempting to drag and drop things into place using a track-pad.
 
-Documentr uses the [Middleman](https://middlemanapp.com/) static site generator writen in Ruby, to generate hierarchical html documents. Documentr is highly hackable with support for multiple pages, layout templates and much more!
+Documentr uses the [Middleman](https://middlemanapp.com/) static site generator written in Ruby, to generate hierarchical html documents. Documentr is highly hackable with support for multiple pages, layout templates and much more!
 
-While the example is written with Haml, you may prefer Markdown, used in this way documentr feels very similar to writing GitHub documentation files, just like this one.
+While the example is written with Haml, you may prefer Markdown, used in this way documentr feels very similar to writing GitHub documentation files, like this one.
 
 Middleman makes use of [Tilt](https://github.com/rtomayko/tilt/), a generic interface to multiple Ruby template engines. Which allows documentr files to be written in an array of markdown and markup languages, whichever you're more comfortable using.
 
@@ -51,7 +51,8 @@ Documentr will generate a "Sections" index, similar to a table of contents, base
 
 #### Example:
     ---
-    copyright: "2016 Example"
+    title: "Documentr"
+    description: "Sections index generation example"
     sections:
     - "My first documentr doc"
     - headings:
@@ -66,31 +67,44 @@ Documentr will generate a "Sections" index, similar to a table of contents, base
       - "heading 1"
     - "Section 4"
     ---
+
     %h1 My first documentr doc
     %p Isn't this easy?
+    %p Run middleman server to preview your document
+
     %h2 heading 1
     %p content for section 1, heading 1
+
     %h2 heading 2
     %p content for section 1, heading 2
+
     %h3 sub heading 1
     %p content for heading 2, sub heading 1
+
     %h3 sub heading 2
     %p content for heading 2, sub heading 2
+
     %h1 Section 2
     %p content for section 2
+    
     %h1 Section 3
     %p content for section 3
+    
     %h2 Heading 1
     %p content for section 3, heading 1
+    
     %h1 Section 4
     %p content for section 4
 
 ## Previewing a documentr doc
-Open your browser to:
+
+    $ bundle exec middleman server
+
+Now, open your browser to:
 
     localhost:4567
 
-Documentr makes use of live-reloading using middleman-livereload
+Documentr also makes use of live-reloading using middleman-livereload, automatically refreshing your browser preview anytime you hit save.
 
 ## Publishing a documentr doc
 
