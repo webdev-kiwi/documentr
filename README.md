@@ -14,7 +14,7 @@ Middleman makes use of [Tilt](https://github.com/rtomayko/tilt/), a generic inte
     $ bundle exec middleman server
 
 ## Creating a documentr doc
-Open, source/index.haml in your favourite code editor and start typing.
+Open, __source/index.haml__ in your favourite code editor and start typing.
     
     %h1 My first documentr doc
     %p Isn't this easy?
@@ -23,7 +23,7 @@ Open, source/index.haml in your favourite code editor and start typing.
 Config is done using YAML Frontmatter
 
 #### Defaults
-Defaults are set in data/defaults.yaml
+Defaults are set in __data/defaults.yaml__
 
     title: "Untitled"
     description: "No description"
@@ -95,5 +95,5 @@ Documentr makes use of live-reloading using middleman-livereload
 ## Publishing a documentr doc
 
     $ bundle exec middleman build
-    
-Your documentation is now ready in build/
+
+Your documentation is now ready in your __build/__ folder.
