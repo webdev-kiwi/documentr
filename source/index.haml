@@ -1,0 +1,112 @@
+---
+copyright: "2016 Example"
+sections:
+- "Section 1"
+- headings:
+  - "heading 1"
+  - "heading 2"
+  - subs:
+    - "sub heading 1"
+    - "sub heading 2"
+- "Section 2"
+- "Section 3"
+- headings:
+  - "heading 1"
+- "Section 4"
+---
+
+%h3 link examples
+%p 
+  Beautiful, DRY, well-indented, clear markup: templating haiku.
+  = link_to('Haml Tutorial', "http://haml.info/tutorial.html") + '.'
+%p 
+  Prefer to write your documentation in Html or
+  = link_to('Markdown', 'https://guides.github.com/features/mastering-markdown/') + '?'
+  Middleman makes use of
+  = link_to('Tilt', 'https://github.com/rtomayko/tilt/') + ','
+  a generic interface to multiple Ruby template engines.
+%p You may set options for the various template engines in your config.rb:
+
+%h3 code example
+%p
+  %code
+    set :haml, { :ugly => true, :format => :html5 }
+%p
+  For information on template engine options, see:
+  = link_to 'https://middlemanapp.com/basics/template_engine_options/', 'https://middlemanapp.com/basics/template_engine_options/'
+
+%h3 table example
+%p YAML Frontmatter default values are set in data/defaults.yaml
+
+%table
+  %tr
+    %th key
+    %th value
+  %tr
+    %td title:
+    %td= data.defaults.title
+  %tr
+    %td description:
+    %td= data.defaults.description
+  %tr
+    %td version:
+    %td= data.defaults.version
+  %tr
+    %td date:
+    %td= Date.today
+  %tr
+    %td author:
+    %td= data.defaults.author
+  %tr
+    %td copyright:
+    %td 
+      %em null
+
+%p overide defaults at the top of your index.haml, e.g.
+%p
+  %code
+    \---
+    %br/
+    title: "Example"
+    %br/
+    copyright: "2016 Company"
+    %br/
+    sections:
+    %br/
+    \- "Section 1"
+    %br/
+    \- headings:
+    %br/
+    &nbsp;&nbsp;- "heading 1"
+    %br/
+    &nbsp;&nbsp;- subs:
+    %br/
+    &nbsp;&nbsp;&nbsp;&nbsp;- "sub heading 1"
+    %br/
+    &nbsp;&nbsp;&nbsp;&nbsp;- "sub heading 2"
+    %br/
+    &nbsp;&nbsp;- "heading 2"
+    %br/
+    \- "Section 2"
+    %br/
+    \---
+
+%p Sections index is generated from a nested structure.
+%p
+  %code 
+    section has many headings
+    %br/
+    headings belongs to section
+    %br/
+    heading has many subs
+    %br/
+    Subs belongs to heading
+
+%h3 image examples
+%p images are compressed using imageoptim at build
+%p= image_tag "graph-1.gif"
+%p
+  image credit:
+  = link_to 'Why\'s (Poignant) Guide to Ruby', 'http://poignant.guide/'
+%h3 Microsoft Office friendly!
+%p= image_tag "example-1.png"

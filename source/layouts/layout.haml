@@ -1,0 +1,46 @@
+!!!!!
+%html
+  %head
+    %meta{"charset" => "utf-8"}
+    %meta{"content" => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title= current_page.data.title || data.defaults.title
+    %style{"type" => "text/css"}
+      :css
+        body{ color:#333333; } 
+        .note{ color:red; }
+  %body
+    %h1= current_page.data.title || data.defaults.title
+    %p= current_page.data.description || data.defaults.description
+    %hr/
+    .note
+      %strong Version:
+      %em= current_page.data.version || data.defaults.version
+    %p
+      %strong Date:
+      = current_page.data.date || Date.today
+    %p
+      %strong Author:
+      = current_page.data.author || data.defaults.author
+    - if current_page.data.sections
+      %hr/
+      %h2 Sections
+      %ul
+        - current_page.data.sections.each do |section|
+          - if section.is_a? String
+            %li= section.html_safe
+          - else
+            %ul
+              - section.headings.each do |heading|
+                - if heading.is_a? String
+                  %li= heading.html_safe
+                - else
+                  %ul
+                    - heading.subs.each do |sub|
+                      %li= sub.html_safe
+    %hr/
+    = yield
+    - if current_page.data.copyright
+      %hr/
+      %p
+        %strong &copy;
+        = current_page.data.copyright.html_safe
