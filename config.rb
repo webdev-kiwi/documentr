@@ -48,6 +48,7 @@ end
 # end
 
 set :images_dir, 'images'
+set :haml, { :ugly => false, :format => :html5 }
 
 # Build-specific configuration
 configure :build do

@@ -1,11 +1,11 @@
 # Documentr
 Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor and your mechanical keyboard! No more time wasted clicking through endless menus and prompts, fumbling around with crowded word processor UI, or attempts to resize, drag or drop anything into place using a track-pad.
 
-Documentr uses the [Middleman](https://middlemanapp.com/) static site generator written in Ruby, to generate hierarchical html documents. This makes Documentr highly extendable with support for multiple pages, layout templates and much more!
+Documentr uses the [Middleman](https://middlemanapp.com/) static site generator written in Ruby, to generate hierarchical html documents. This makes Documentr highly extendable with support for multiple pages, layout templates, integrations, and much more!
 
-The examples are written with Haml, but you may prefer Markdown, used in this way documentr feels very similar to writing GitHub documentation files, like this one.
+These examples are written with Haml, but you may prefer Markdown, used in this way documentr feels very similar to writing GitHub documentation files, Documentr is compatible with GitHub Markdown documents.
 
-Middleman makes use of [Tilt](https://github.com/rtomayko/tilt/), a generic interface to multiple Ruby template engines. This allows documentr files to be written in an array of markdown and markup languages, whichever you're more comfortable using.
+Like Ruby on Rails, Middleman makes use of [Tilt](https://github.com/rtomayko/tilt/), a generic interface to multiple Ruby template engines. This allows documentr files to be written in an array of markdown and markup languages, whichever you're more comfortable using.
 
 ## Getting started
 

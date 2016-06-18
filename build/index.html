@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-    <title>Documentr - Html hierarchical documentation generator</title>
+    <title>Documentr - hierarchical html documentation generator</title>
     <style type='text/css'>
       <style>
         body{ color:#333333; } 
@@ -12,12 +12,12 @@
     </style>
   </head>
   <body>
-    <h1>Documentr - Html hierarchical documentation generator</h1>
-    <p>Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor with your mechanical keyboard! No more time wasted clicking through endless menus and prompts, or attempting to drag and drop things into place using a track-pad.</p>
+    <h1>Documentr - hierarchical html documentation generator</h1>
+    <p>Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor and your mechanical keyboard! No more time wasted clicking through endless menus and prompts, fumbling around with crowded word processor UI, or attempts to resize, drag or drop anything into place using a track-pad.</p>
     <hr>
     <div class='note'>
       <strong>Version:</strong>
-      <em>1.0</em>
+      <em>0.2.7</em>
     </div>
     <p>
       <strong>Date:</strong>
@@ -30,24 +30,46 @@
     <hr>
     <h2>Sections</h2>
     <ul>
-      <li>Section 1</li>
+      <li>Introduction</li>
       <ul>
-        <li>heading 1</li>
-        <li>heading 2</li>
+        <li>Getting started</li>
+      </ul>
+      <li>Template engine</li>
+      <ul>
+        <li>Setting template engines</li>
+      </ul>
+      <li>YAML Frontmatter</li>
+      <li>Helpers</li>
+      <ul>
+        <li>Links</li>
+        <li>Images</li>
         <ul>
-          <li>sub heading 1</li>
-          <li>sub heading 2</li>
+          <li>Automatic image sizes</li>
+          <li>Image optimisation</li>
         </ul>
+        <li>Section index generator</li>
       </ul>
-      <li>Section 2</li>
-      <li>Section 3</li>
+      <li>Publishing Documentr files</li>
       <ul>
-        <li>heading 1</li>
+        <li>Middleman build</li>
       </ul>
-      <li>Section 4</li>
     </ul>
     <hr>
-    <h3>link examples</h3>
+    <h1>Introduction</h1>
+    <p>
+      Documentr uses the
+      <a href="https://middlemanapp.com/">Middleman</a>
+      static site generator written in Ruby, to generate hierarchical html documents. This makes Documentr highly extendable with support for multiple pages, layout templates, integrations, and much more!
+    </p>
+    <p>These examples are written with Haml, but you may prefer Markdown, used in this way documentr feels very similar to writing GitHub documentation files, Documentr is compatible with GitHub Markdown documents.</p>
+    <h2>Getting started</h2>
+    <hr>
+    <h1>Template engine</h1>
+    <p>
+      Like Ruby on Rails, Middleman makes use of
+      <a href="https://github.com/rtomayko/tilt/">Tilt</a>
+      a generic interface to multiple Ruby template engines. This allows Documentr source code to be written in an array of markdown and markup languages, whichever you're more comfortable using.
+    </p>
     <p>
       Beautiful, DRY, well-indented, clear markup: templating haiku.
       <a href="http://haml.info/tutorial.html">Haml Tutorial</a>.
@@ -55,21 +77,25 @@
     <p>
       Prefer to write your documentation in Html or
       <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a>?
-      Middleman makes use of
-      <a href="https://github.com/rtomayko/tilt/">Tilt</a>,
-      a generic interface to multiple Ruby template engines.
     </p>
-    <p>You may set options for the various template engines in your config.rb:</p>
-    <h3>code example</h3>
+    <h2>Setting template engines</h2>
     <p>
-      <code>set :haml, { :ugly => true, :format => :html5 }</code>
+      Template engine options are set in
+      <strong>config.rb</strong>
     </p>
     <p>
-      For information on template engine options, see:
+      <code>set :haml, { :ugly => false, :format => :html5 }</code>
+    </p>
+    <p>
+      For more information on template engine options, see:
       <a href="https://middlemanapp.com/basics/template_engine_options/">https://middlemanapp.com/basics/template_engine_options/</a>
     </p>
-    <h3>table example</h3>
-    <p>YAML Frontmatter default values are set in data/defaults.yaml</p>
+    <hr>
+    <h1>YAML Frontmatter</h1>
+    <p>
+      YAML Frontmatter default values are set in
+      <strong>data/defaults.yaml</strong>
+    </p>
     <table>
       <tr>
         <th>key</th>
@@ -77,15 +103,15 @@
       </tr>
       <tr>
         <td>title:</td>
-        <td>Documentr - Html hierarchical documentation generator</td>
+        <td>Documentr - hierarchical html documentation generator</td>
       </tr>
       <tr>
         <td>description:</td>
-        <td>Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor with your mechanical keyboard! No more time wasted clicking through endless menus and prompts, or attempting to drag and drop things into place using a track-pad.</td>
+        <td>Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor and your mechanical keyboard! No more time wasted clicking through endless menus and prompts, fumbling around with crowded word processor UI, or attempts to resize, drag or drop anything into place using a track-pad.</td>
       </tr>
       <tr>
         <td>version:</td>
-        <td>1.0</td>
+        <td>0.2.7</td>
       </tr>
       <tr>
         <td>date:</td>
@@ -97,18 +123,38 @@
       </tr>
       <tr>
         <td>copyright:</td>
-        <td>
-          <em>null</em>
-        </td>
+        <td>2016 Webdev.kiwi Limited</td>
       </tr>
     </table>
-    <p>overide defaults at the top of your index.haml, e.g.</p>
+    <p>
+      overide defaults at the top of your
+      <strong>index.haml</strong>
+    </p>
     <p>
       <code>---
       <br>
       title: "Example"
       <br>
       copyright: "2016 Company"
+      <br>
+      ---</code>
+    </p>
+    <hr>
+    <h1>Helpers</h1>
+    <h2>Links</h2>
+    <h2>Images</h2>
+    <p><img width="363" height="230" src="images/graph-1.gif" /></p>
+    <p>
+      image credit:
+      <a href="http://poignant.guide/">Why's (Poignant) Guide to Ruby</a>
+    </p>
+    <h3>Automatic image sizes</h3>
+    <h3>Image optimisation</h3>
+    <p>images are compressed using imageoptim at build</p>
+    <h2>Section index generator</h2>
+    <p>use at the top of your index.haml</p>
+    <p>
+      <code>---
       <br>
       sections:
       <br>
@@ -130,29 +176,18 @@
       <br>
       ---</code>
     </p>
-    <p>Sections index is generated from a nested structure.</p>
+    <p>Section index is generated from a nested structure.</p>
     <p>
       <code>section has many headings
       <br>
-      heading belongs to sections
+      heading belongs to section
       <br>
       heading has many subs
       <br>
-      Sub belongs to headings</code>
+      Sub belongs to heading</code>
     </p>
-    <h3>image examples</h3>
-    <p>images are compressed using imageoptim at build</p>
-    <p><img width="363" height="230" src="images/graph-1.gif" /></p>
-    <p>
-      image credit:
-      <a href="http://poignant.guide/">Why's (Poignant) Guide to Ruby</a>
-    </p>
-    <h3>Microsoft Office friendly!</h3>
+    <h1>Publishing Documentr files</h1>
+    <h2>Middleman build</h2>
     <p><img width="984" height="936" src="images/example-1.png" /></p>
-    <hr>
-    <p>
-      <strong>&copy;</strong>
-      2016 Example
-    </p>
   </body>
 </html>
