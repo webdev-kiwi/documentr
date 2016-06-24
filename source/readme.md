@@ -69,10 +69,6 @@ The data directory contains the default data, such as title and author page vari
 
 The source directory is your working directory, containing your source files the generator will use to build your output files from.
 
-### config.rb
-
-This file contains the config and settings for use by the generator. You should only need to touch this file if you are customising Documentr.
-
 ## Middleman server
 
 Start the Middleman development server, with default options by typing:
