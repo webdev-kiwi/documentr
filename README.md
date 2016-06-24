@@ -22,7 +22,6 @@ This section assumes you have Ruby installed, are familiar with basic web develo
   * defaults.yaml
 * source
   * images
-    * graph-1.gif
   * layouts
     * layout.haml
   * empty.md
