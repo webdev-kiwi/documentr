@@ -1,0 +1,289 @@
+---
+sections:
+- "Introduction"
+- "Getting started"
+- headings:
+  - "Directory structure"
+  - "Middleman server"
+- "The template engine"
+- headings:
+  - "Setting template engines"
+- "YAML Frontmatter"
+- "Helpers"
+- headings:
+  - "Links"
+  - "Images"
+  - subs:
+    - "Automatic image sizes"
+    - "Image optimisation"
+  - "Section index generator"
+  - "Middleman-Livereload"
+- "Publishing Documentr files"
+- headings:
+  - "Middleman build"
+---
+/ ------------------------------------------------------------------------------
+%h1 Introduction
+%p 
+  Documentr uses the 
+  = link_to 'Middleman', 'https://middlemanapp.com/', target: "_blank"
+  static site generator written in Ruby, to generate hierarchical html documents. This makes Documentr highly extendable with support for multiple pages, layout templates, integrations, and much more! Anybody who is familiar with Ruby on Rails will find Documentr very familiar to use.
+%p
+  Documentr is intended to be a simplistic framework, used to generate HTML documents that are compatible with a wide array of applications and uses. It is recommended that the use of CSS is kept to a minimum and Javascript is avoided, however feel free to break these guidelines if your use case calls for such.
+%p 
+  The examples are written with Haml, but if you prefer Markdown, Documentr feels very similar to writing GitHub documentation files, and is compatible with GitHub Markdown files.
+/ ------------------------------------------------------------------------------
+%hr/
+%h1 Getting started
+%p This section assumes you have Ruby installed and are familiar with elementary web development concepts and a terminal.
+%p
+  %code $ git clone https://github.com/webdev-kiwi/documentr
+  %br/
+  %code $ bundle install
+/ ------------------------------------------------------------------------------
+%h2 Directory structure
+%ul
+  %li 
+    %em 
+      build
+  %ul
+    %li 
+      %em
+        images
+      %ul
+        %li graph-1.gif
+    %li imageoptim.manifest.yml
+    %li index.html
+  %li 
+    %em
+      data
+    %ul
+      %li defaults.yaml
+  %li 
+    %strong
+      %em
+        source
+    %ul
+      %li
+        %em
+          images
+        %ul
+          %li graph-1.gif
+      %li
+        %em
+          layouts
+        %ul
+          %li layout.haml
+      %li demo.haml
+      %li index.haml
+  %li config.rb
+  %li Gemfile
+  %li Gemfile.lock
+  %li LICENSE
+  %li README.md
+/ ------------------------------------------------------------------------------
+%h3 build
+%p
+  The build directory contains the output files, or built Documentr files.
+%h3 data
+%p
+  The data directory contains the default data, such as title and author page variables for use within the source files.
+%h3 source
+%p
+  The source directory is your working directory, containing your source files the generator will use to build your output files from.
+%h3 config.rb
+%p
+  This file contains the config and settings for use by the generator.
+%h3 Gemfile
+%p
+  If this file needs explanation, don't touch it!
+/ ------------------------------------------------------------------------------
+%h2 Middleman server
+%p
+  Start the Middleman development server, with default options by typing:
+%p
+  %code $ bundle exec middleman server
+%p
+  Now, to preview your document simply open a web browser and type
+  %em localhost:4567/demo.html
+  into your address bar. You may overide the default port to
+  %em 4568
+  for example, with:
+%p
+  %code $ bundle exec middleman server --port=4568
+/ ------------------------------------------------------------------------------
+%hr/
+%h1 The template engine
+%p 
+  Like Ruby on Rails, Middleman makes use of 
+  = link_to 'Tilt', 'https://github.com/rtomayko/tilt/', target: "_blank"
+  a generic interface to multiple Ruby template engines. This allows Documentr source code to be written in an array of markdown and markup languages, whichever you're more comfortable using.
+%p 
+  Beautiful, DRY, well-indented, clear markup: templating haiku.
+  = link_to('Haml Tutorial', "http://haml.info/tutorial.html", target: "_blank") + '.'
+%p 
+  Prefer to write your documentation in
+  = link_to('Markdown', 'https://guides.github.com/features/mastering-markdown/', target: "_blank") + '?'
+/ ------------------------------------------------------------------------------
+%h2 Setting template engines
+%p 
+  Template engine options are set in
+  %strong config.rb
+  the default settings for use with Haml are shown below:
+%p
+  %code
+    set :haml, { :ugly => false, :format => :html5 }
+%p
+  And for Markdown, with the Kramdown engine:
+%p
+  %code
+    set :markdown, :fenced_code_blocks => true, :smartypants => true
+%p
+  For more information on template engine options, see:
+  = link_to 'https://middlemanapp.com/basics/template_engine_options/', 'https://middlemanapp.com/basics/template_engine_options/', target: "_blank"
+/ ------------------------------------------------------------------------------
+%h2 Frontmatter
+%p Frontmatter allows page specific variables to be included at the top of a template using the YAML format.
+%p 
+  Documentr default values are set in 
+  %strong data/defaults.yaml
+%h3 Default variables
+%table
+  %tr
+    %th key
+    %th value
+  %tr
+    %td title:
+    %td= data.defaults.title || 'null'
+  %tr
+    %td description:
+    %td= data.defaults.description || 'null'
+  %tr
+    %td version:
+    %td= data.defaults.version || 'null'
+  %tr
+    %td date:
+    %td= Date.today
+  %tr
+    %td author:
+    %td= data.defaults.author || 'null'
+  %tr
+    %td copyright:
+    %td= data.defaults.copyright || 'null'
+%p 
+  You may override these at the top of any source file, like so:
+%p
+  %code
+    \---
+    %br/
+    title: "Example"
+    %br/
+    copyright: "2016 Company"
+    %br/
+    \---
+%h3 JSON Alternative
+%p
+  Alternatively JSON may be used, example:
+%p
+  %code ;;;
+  %br/
+  %code "layout": "custom",
+  %br/
+  %code "my_list": [
+  %br/
+  %code "one",
+  %br/
+  %code "two",
+  %br/
+  %code "three"
+  %br/
+  %code ]
+  %br/
+  %code ;;;
+/ ------------------------------------------------------------------------------
+%hr/
+%h1 Helpers
+%p 
+  Middleman
+  = link_to("Helper Methods", "https://middlemanapp.com/basics/helper_methods/", target: "_blank")
+  should feel very familiar to anyone who has used rails view helpers. These helpers are from the Padrino Framework, view the full documentation for
+  = link_to(" Padrino Application Helpers", "http://padrinorb.com/guides/application-helpers/overview/", target: "_blank") + '.'
+/ ------------------------------------------------------------------------------
+%h2 Link helper
+%p
+  %code = link_to "link text", "link url"
+%p
+  %code = link_to("link text", "link url", target: "_blank")
+%p
+  %code = link_to("link text", "link url", target: "_blank") + ","
+/ ------------------------------------------------------------------------------
+%h2 Image helper
+%p
+  %code = image_tag "graph-1.gif"
+%p= image_tag "graph-1.gif"
+%p
+  image credit:
+  = link_to 'Why\'s (Poignant) Guide to Ruby', 'http://poignant.guide/', target: "_blank"
+
+%h3 Automatic image sizes
+%p Documentr will automatically add image sizes to these tags based on the image dimensions.
+%h3 Image optimisation
+%p
+  At the time of build, Documentr will automatically compress images using the 
+  = link_to("middleman-imageoptim", "https://github.com/plasticine/middleman-imageoptim", target: "_blank") + " gem."
+/ ------------------------------------------------------------------------------
+%h2 Section index generator
+%p use at the top of your index.haml
+%p
+  %code
+    \---
+    %br/
+    sections:
+    %br/
+    \- "Section 1"
+    %br/
+    \- headings:
+    %br/
+    &nbsp;&nbsp;- "heading 1"
+    %br/
+    &nbsp;&nbsp;- subs:
+    %br/
+    &nbsp;&nbsp;&nbsp;&nbsp;- "sub heading 1"
+    %br/
+    &nbsp;&nbsp;&nbsp;&nbsp;- "sub heading 2"
+    %br/
+    &nbsp;&nbsp;- "heading 2"
+    %br/
+    \- "Section 2"
+    %br/
+    \---
+
+%p Section index is generated from a nested structure.
+%p
+  %code 
+    section has many headings
+    %br/
+    heading belongs to section
+    %br/
+    heading has many subs
+    %br/
+    Sub belongs to heading
+
+%h2 Middleman-Livereload
+%p
+  = link_to 'Middleman-Livereload', 'https://github.com/middleman/middleman-livereload', target: "_blank"
+  is an extension for the Middleman static site generator that adds livereloading functionality. Live Reload is a system to automatically reload a web page when the source files for that web page are changed. This is particularly useful for previewing your documents without the need to refresh your browser.
+
+%p
+  Coupled with the Chrome
+  = link_to "RemoteLiveReload", "https://chrome.google.com/webstore/detail/remotelivereload/jlppknnillhjgiengoigajegdpieppei", target: "_blank"
+  extension, every time you hit save in your text-editor your browser will automatically refresh the page allowing for seamless previews of your document. Images and other assets will also be automatically reloaded as they're added, or replaced.
+
+%p
+  Some users may experience issues using Middleman-Livereload in certain situations. An alternative to Middleman-Livereload is
+  = link_to("node-livereload", "https://github.com/napcs/node-livereload", target: "_blank") + ","
+  an implementation of the LiveReload server in Node.js.
+
+%h1 Publishing Documentr files
+
+%h2 Middleman build
