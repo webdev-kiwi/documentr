@@ -48,7 +48,13 @@ end
 # end
 
 set :images_dir, 'images'
+
+# Haml settings
 set :haml, { :ugly => false, :format => :html5 }
+
+# Markdown settings
+set :markdown_engine, :kramdown
+set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 # Build-specific configuration
 configure :build do
@@ -84,7 +90,7 @@ configure :build do
     options.jpegtran  = { :copy_chunks => false, :progressive => true, :jpegrescan => true }
     options.optipng   = { :level => 6, :interlace => false }
     options.pngcrush  = { :chunks => ['all'], :fix => false, :brute => false }
-    options.pngout    = { :copy_chunks => false, :strategy => 0 }
-    options.svgo      = {}
+    options.pngout    = false
+    options.svgo      = false
   end
 end

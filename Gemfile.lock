@@ -150,6 +150,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  image_optim (~> 0.20.2)
+  image_optim_pack (~> 0.2.1.20160610)
   middleman (~> 3.4.1)
   middleman-imageoptim (~> 0.2.1)
   middleman-livereload (~> 3.4.0)
