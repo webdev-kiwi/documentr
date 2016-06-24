@@ -44,10 +44,6 @@ This section assumes you have Ruby installed, are familiar with basic web develo
 ## Directory structure
 
 * build
-  * images
-    * graph-1.gif
-  * imageoptim.manifest.yml
-  * index.html
 * data
   * defaults.yaml
 * source

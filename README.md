@@ -18,10 +18,6 @@ This section assumes you have Ruby installed, are familiar with basic web develo
 ## Directory structure
 
 * build
-  * images
-    * graph-1.gif
-  * imageoptim.manifest.yml
-  * index.html
 * data
   * defaults.yaml
 * source
@@ -29,8 +25,6 @@ This section assumes you have Ruby installed, are familiar with basic web develo
     * graph-1.gif
   * layouts
     * layout.haml
-  * blank.haml
-  * demo.haml
   * empty.md
   * example.md
   * index.haml
