@@ -17,7 +17,7 @@
       %em= current_page.data.version || data.defaults.version
     %p
       %strong Date:
-      - if current_page.data.date != ""
+      - if current_page.data.date
         = current_page.data.date
       - else
         = Date.today
@@ -47,4 +47,3 @@
       %p
         %strong &copy;
         = current_page.data.copyright
-        

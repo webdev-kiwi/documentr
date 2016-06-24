@@ -47,20 +47,17 @@ end
 #   end
 # end
 
+# image directory
 set :images_dir, 'images'
 
 # Haml settings
 set :haml, { :ugly => false, :format => :html5 }
-
 # Markdown settings
 set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 # Build-specific configuration
 configure :build do
-  # Enable cache buster
-  # activate :asset_hash
-
   # Use relative URLs
   activate :relative_assets
 
