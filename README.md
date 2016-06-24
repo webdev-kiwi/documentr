@@ -8,8 +8,6 @@ Documentr is intended to be a simplistic 'framework', used to generate Html docu
 
 It is suggested that the use of CSS is kept to a minimum and JavaScript is avoided, however feel free to break these guidelines if you so desire.
 
-***
-
 # Getting started
 
 This section assumes you have Ruby installed, are familiar with basic web development and 'cloud computing' concepts, and a terminal interface.
@@ -69,9 +67,6 @@ Start the Middleman development server, with default options by typing:
 Now, to preview your document simply open a web browser and type *localhost:4567/* into your address bar. You may overide the default port to *4568* for example, with:
 
         $ bundle exec middleman server --port=4568
-
-
-***
 
 # The template engine
 
@@ -165,9 +160,6 @@ Documentr will automatically add image sizes to these tags based on the image di
 ## Image optimisation
 
 At build time, Documentr will automatically compress images using the [middleman-imageoptim](https://github.com/plasticine/middleman-imageoptim) gem and it's dependencies.
-
-
-***
 
 # Publishing Documentr files
 
