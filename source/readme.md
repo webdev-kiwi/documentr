@@ -55,8 +55,6 @@ This section assumes you have Ruby installed, are familiar with basic web develo
     * graph-1.gif
   * layouts
     * layout.haml
-  * blank.haml
-  * demo.haml
   * empty.md
   * example.md
   * index.haml
