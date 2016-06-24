@@ -57,11 +57,11 @@ Now, to preview your document simply open a web browser and type *localhost:4567
 
 Like Ruby on Rails, Middleman makes use of [Tilt](https://github.com/rtomayko/tilt/) a generic interface to multiple Ruby template engines. This allows Documentr source code to be written in an array of markdown and markup languages, whichever you're more comfortable using.
 
-Beautiful, DRY, well-indented, clear markup: templating haiku. [Haml Tutorial](http://haml.info/tutorial.html).
-
 New to Markdown? [Learn Markdown now](http://www.markdowntutorial.com/) it's super easy!
 
 Documentr uses kramdown, a Ruby Markdown-superset converter, [kramdown quick reference](http://kramdown.gettalong.org/quickref.html).
+
+Beautiful, DRY, well-indented, clear markup: templating haiku. [Haml Tutorial](http://haml.info/tutorial.html).
 
 ## Setting template engines
 
