@@ -169,14 +169,16 @@ Section index is generated from a nested structure, 3 levels deep, like so:
     heading has many subs
     Sub belongs to heading
 
+## Images
+
+![Why's (Poignant) Guide to Ruby](images/graph-1.gif)  
+Image credit: [Why's (Poignant) Guide to Ruby](http://poignant.guide/)
+
 ## Automatic image sizes
 
 Documentr will automatically add image sizes to these tags based on the image dimensions.
 
-### Test image:
-
-![Why's (Poignant) Guide to Ruby](images/graph-1.gif)  
-Image credit: [Why's (Poignant) Guide to Ruby](http://poignant.guide/)
+_note: not currently working with kramdown_
 
 ## Image optimisation
 

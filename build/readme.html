@@ -86,11 +86,7 @@
       </li>
       <li>source
         <ul>
-          <li>images
-            <ul>
-              <li>graph-1.gif</li>
-            </ul>
-          </li>
+          <li>images</li>
           <li>layouts
             <ul>
               <li>layout.haml</li>
@@ -118,10 +114,6 @@
     
     <p>The source directory is your working directory, containing your source files the generator will use to build your output files from.</p>
     
-    <h3 id="configrb">config.rb</h3>
-    
-    <p>This file contains the config and settings for use by the generator. You should only need to touch this file if you are customising Documentr.</p>
-    
     <h2 id="middleman-server">Middleman server</h2>
     
     <p>Start the Middleman development server, with default options by typing:</p>
@@ -140,9 +132,11 @@
     
     <p>Like Ruby on Rails, Middleman makes use of <a href="https://github.com/rtomayko/tilt/">Tilt</a> a generic interface to multiple Ruby template engines. This allows Documentr source code to be written in an array of markdown and markup languages, whichever you’re more comfortable using.</p>
     
-    <p>Beautiful, DRY, well-indented, clear markup: templating haiku. <a href="http://haml.info/tutorial.html">Haml Tutorial</a>.</p>
+    <p>New to Markdown? <a href="http://www.markdowntutorial.com/">Learn Markdown now</a> it’s super easy!</p>
     
-    <p>Prefer to write your documentation in <a href="'https://guides.github.com/features/mastering-markdown/'">Markdown</a>?</p>
+    <p>Documentr uses kramdown, a Ruby Markdown-superset converter, <a href="http://kramdown.gettalong.org/quickref.html">kramdown quick reference</a>.</p>
+    
+    <p>Beautiful, DRY, well-indented, clear markup: templating haiku. <a href="http://haml.info/tutorial.html">Haml Tutorial</a>.</p>
     
     <h2 id="setting-template-engines">Setting template engines</h2>
     
@@ -156,7 +150,7 @@
     <pre><code>  set :markdown, :fenced_code_blocks =&gt; true, :smartypants =&gt; true
     </code></pre>
     
-    <p>For more information on template engine options, see <a href="https://middlemanapp.com/basics/template_engine_options/">Template engine options</a></p>
+    <p>For more information on template engine options, see <a href="https://middlemanapp.com/basics/template_engine_options/">Template engine options</a>.</p>
     
     <h2 id="frontmatter">Frontmatter</h2>
     
@@ -228,14 +222,16 @@
     Sub belongs to heading
     </code></pre>
     
+    <h2 id="images">Images</h2>
+    
+    <p><img alt="Why's (Poignant) Guide to Ruby" src="images/graph-1.gif" /><br />
+    Image credit: <a href="http://poignant.guide/">Why’s (Poignant) Guide to Ruby</a></p>
+    
     <h2 id="automatic-image-sizes">Automatic image sizes</h2>
     
     <p>Documentr will automatically add image sizes to these tags based on the image dimensions.</p>
     
-    <h3 id="test-image">Test image:</h3>
-    
-    <p><img alt="Why's (Poignant) Guide to Ruby" src="images/graph-1.gif" /><br />
-    Image credit: <a href="http://poignant.guide/">Why’s (Poignant) Guide to Ruby</a></p>
+    <p><em>note: not currently working with kramdown</em></p>
     
     <h2 id="image-optimisation">Image optimisation</h2>
     
