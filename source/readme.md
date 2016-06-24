@@ -1,3 +1,27 @@
+---
+sections:
+- "Introduction"
+- "Getting started"
+- headings:
+  - "Directory structure"
+  - "Middleman server"
+- "The template engine"
+- headings:
+  - "Setting template engines"
+  - "YAML Frontmatter"
+- "Helpers"
+- headings:
+  - "Middleman-Livereload"
+  - "Section index generator"
+  - "Automatic image sizes"
+  - "Image optimisation"
+- "Publishing Documentr files"
+- headings:
+  - "Middleman build"
+---
+
+[<< index.html](index.html)
+
 # Introduction
 
 Generate Html documentation from Markdown or Haml with ease, from the comfort of your favourite distraction free text editor. Preview your Markdown or Haml code in your web browser, generate Html and automatically optimise your images when you're done. No more time wasted clicking through endless menus and prompts, fumbling around with bloated word processors in attempts to structure, format, resize, or drop some thing in place then drag it around. Documentr makes generating hierarchical documentation fast and enjoyable.

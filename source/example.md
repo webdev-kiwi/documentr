@@ -12,6 +12,15 @@ sections:
 
 # Markdown example file
 
+If you're new to Markdown, [start here](http://www.markdowntutorial.com/)
+
+Then read the [kramdown quick reference](http://kramdown.gettalong.org/quickref.html)
+
+_note: Documentr technically uses "kramdown", which is a super set of "Markdown"_
+{: .note}
+
+# h1
+
 ## h2
 
 ### h3
@@ -19,6 +28,8 @@ sections:
 #### h4
 
 ##### h5
+
+###### h6
 
 This is a paragraph
 
