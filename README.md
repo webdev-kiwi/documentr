@@ -59,7 +59,9 @@ Like Ruby on Rails, Middleman makes use of [Tilt](https://github.com/rtomayko/ti
 
 Beautiful, DRY, well-indented, clear markup: templating haiku. [Haml Tutorial](http://haml.info/tutorial.html).
 
-Prefer to write your documentation in [Markdown]('https://guides.github.com/features/mastering-markdown/')?
+New to Markdown? [Learn Markdown now](http://www.markdowntutorial.com/) it easy!
+
+Documentr uses kramdown, a Ruby Markdown-superset converter, [kramdown quick reference](http://kramdown.gettalong.org/quickref.html).
 
 ## Setting template engines
 
