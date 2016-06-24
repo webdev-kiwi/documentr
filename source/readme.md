@@ -20,7 +20,7 @@ sections:
   - "Middleman build"
 ---
 
-[<< index.html](index.html)
+[<< index.html](/index.html)
 
 # Introduction
 
@@ -175,6 +175,11 @@ Section index is generated from a nested structure, 3 levels deep, like so:
 ## Automatic image sizes
 
 Documentr will automatically add image sizes to these tags based on the image dimensions.
+
+### Test image:
+
+![Why's (Poignant) Guide to Ruby](images/graph-1.gif)  
+Image credit: [Why's (Poignant) Guide to Ruby](http://poignant.guide/)
 
 ## Image optimisation
 
