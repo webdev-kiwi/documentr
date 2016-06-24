@@ -53,7 +53,7 @@ set :haml, { :ugly => false, :format => :html5 }
 # Build-specific configuration
 configure :build do
   # Enable cache buster
-  activate :asset_hash
+  # activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
