@@ -1,6 +1,6 @@
 title: "Documentr - hierarchical document generator"
 description: "Makes generating hierarchical documentation fast and enjoyable, from the comfort of your favourite code editor and your mechanical keyboard. No more time wasted clicking through endless menus and prompts, fumbling around with bloated word processors, in attempts to structure, format, resize, or drop some thing in place, then drag it around."
-version: "0.3"
+version: "0.4"
 date: ''
 author: "Joseph Patton-Robson"
 copyright: '2016 Webdev.kiwi Limited'
