@@ -1,5 +1,11 @@
 ---
+title: 
+description: "Example document using <strong>Markdown</strong>"
+version: 
+date: 
+author: 
 copyright: ""
+sections:
 ---
 
 [<< index.html](index.html)

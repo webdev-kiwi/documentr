@@ -9,22 +9,82 @@
         body{ color:#333333; } 
         .note{ color:red; }
   %body
-    %h1= current_page.data.title || data.defaults.title
-    %p= current_page.data.description || data.defaults.description
-    %hr/
-    .note
-      %strong Version:
-      %em= current_page.data.version || data.defaults.version
-    %p
-      %strong Date:
-      - if current_page.data.date
-        = current_page.data.date
+
+    -# Page title
+    - if current_page.data.title
+      -# data variable on page
+      - if current_page.data.title != ''
+        -# show if not empty
+        %h1= current_page.data.title.html_safe
+    - else
+      - if data.defaults.title != ''
+        -# if a value is set in defaults file
+        %h1= data.defaults.title.html_safe
+
+    -# Page description
+    - if current_page.data.description
+      -# data variable on page
+      - if current_page.data.description != ''
+        -# show if not empty
+        %p= current_page.data.description.html_safe
+    - else
+      - if data.defaults.description != ''
+        -# if a value is set in defaults file
+        %p= data.defaults.description.html_safe
+
+    -# Page version
+    - if current_page.data.version
+      -# data variable on page
+      - if current_page.data.version != ''
+        -# show if not empty
+        %p
+          %strong Version:
+          %em= current_page.data.version.html_safe
+    - else 
+      -if data.defaults.version != ''
+        -# if a value is set in defaults file
+        %p
+          %strong Version:
+          %em= data.defaults.version.html_safe
+    
+    -# Page date
+    - if current_page.data.date
+      -# date variable on page
+      - if current_page.data.date != ''
+        -# if a value is set on page use it
+        %p
+          %strong Date:
+          %em= current_page.data.date.html_safe
+    - else
+      - if data.defaults.date != ''
+        -# if a value is set in defaults file
+        %p
+          %strong Date:
+          %em= data.defaults.date.html_safe
       - else
-        = Date.today
-    %p
-      %strong Author:
-      = current_page.data.author || data.defaults.author
+        -# Set date to today
+        %p
+          %strong Date:
+          %em= Date.today
+    
+    -# Page author
+    - if current_page.data.author
+      -# author variable on page
+      - if current_page.data.author != ''
+        -# if author variable has value use it
+        %p
+          %strong Author:
+          %em= current_page.data.author.html_safe
+    - else
+      -# value is set in defaults file
+      - if data.defaults.author
+        %p
+          %strong Author:
+          %em= data.defaults.author.html_safe
+    
+    -# Page sections
     - if current_page.data.sections
+      -# sections declared on page
       %hr/
       %h2 Sections
       %ul
@@ -40,10 +100,24 @@
                   %ul
                     - heading.subs.each do |sub|
                       %li= sub.html_safe
+    
+    -# Yield page content
     %hr/
     = yield
-    - if current_page.data.copyright != ""
-      %hr/
-      %p
-        %strong &copy;
-        = current_page.data.copyright
+
+    -# Page copyright
+    - if current_page.data.copyright
+      -# copyright variable on page
+      - if current_page.data.copyright != ''
+        -# if a value is set on page use it
+        %hr/
+        %p
+          %strong &copy;
+          = current_page.data.copyright.html_safe
+    - else
+      -# value is set in defaults file
+      - if data.defaults.copyright
+        %hr/
+        %p
+          %strong &copy;
+          = data.defaults.copyright.html_safe
