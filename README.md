@@ -12,7 +12,7 @@ It is suggested that the use of CSS is kept to a minimum and JavaScript is avoid
 
 This section assumes you have Ruby installed, are familiar with basic web development and 'cloud computing' concepts, and a terminal interface.
 
-        $ git clone https://github.com/webdev-kiwi/documentr
+    $ git clone https://github.com/webdev-kiwi/documentr
     $ bundle install
 
 ## Directory structure
@@ -62,11 +62,11 @@ Again, you should only need to touch this file if you are customising Documentr.
 
 Start the Middleman development server, with default options by typing:
 
-        $ bundle exec middleman server
+    $ bundle exec middleman server
 
 Now, to preview your document simply open a web browser and type *localhost:4567/* into your address bar. You may overide the default port to *4568* for example, with:
 
-        $ bundle exec middleman server --port=4568
+    $ bundle exec middleman server --port=4568
 
 # The template engine
 
@@ -80,11 +80,11 @@ Prefer to write your documentation in [Markdown]('https://guides.github.com/feat
 
 Template engine options are set in **config.rb** the default settings for use with Haml are shown below:
 
-      set :haml, { :ugly => false, :format => :html5 }
+    set :haml, { :ugly => false, :format => :html5 }
 
 And for Markdown, with the Kramdown engine:
   
-      set :markdown, :fenced_code_blocks => true, :smartypants => true
+    set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 For more information on template engine options, see [Template engine options](https://middlemanapp.com/basics/template_engine_options/)
 
@@ -105,7 +105,7 @@ Documentr default values are set in **data/defaults.yaml**
 
 You may override these at the top of any source file, like so:
 
-        ---  
+    ---  
     title: ""   
     description: ""   
     version: "Markdown"   
@@ -130,7 +130,7 @@ Some users may experience issues using Middleman-Livereload in certain situation
 
 Yaml Frontmatter
 
-        ---  
+    ---  
     sections:  
     - "Section 1"  
       - headings:  
@@ -148,7 +148,7 @@ Yaml Frontmatter
 
 Section index is generated from a nested structure, 3 levels deep, like so:
 
-        section has many headings
+    section has many headings
     heading belongs to section
     heading has many subs
     Sub belongs to heading
@@ -165,6 +165,6 @@ At build time, Documentr will automatically compress images using the [middleman
 
 ## Middleman build
 
-      $ bundle exec middleman build
+    $ bundle exec middleman build
 
 Your documentation is now ready in your **build/** folder!
