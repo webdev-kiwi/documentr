@@ -2,6 +2,8 @@
 copyright: ""
 ---
 
+[<< index.html](index.html)
+
 # Markdown example file
 
 ## h2
@@ -54,6 +56,10 @@ Setting a class to a paragraph
 
 A [link](http://kramdown.gettalong.org)
 to the kramdown homepage.
+
+Check out [DevDocs.io](http://devdocs.io/markdown/) for a full Markdown reference.
+
+If you need a link to open in a new tab, just use inline html like <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">this link</a> to a Markdown cheatsheet
 
 An image:
 
