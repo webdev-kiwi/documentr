@@ -52,9 +52,13 @@ set :images_dir, 'images'
 
 # Haml settings
 set :haml, { :ugly => false, :format => :html5 }
+
 # Markdown settings
 set :markdown_engine, :kramdown
 set :markdown, :fenced_code_blocks => true, :smartypants => true
+
+# required to get Markdown and Middleman playing nicely with each other
+set :relative_links, true
 
 # Build-specific configuration
 configure :build do
