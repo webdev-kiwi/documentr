@@ -20,11 +20,11 @@ sections:
   - "Middleman build"
 ---
 
-[<< index.html](/index.html)
+[<< index.html](index.html)
 
 # Introduction
 
-Generate Html documentation from Markdown or Haml with ease, from the comfort of your favourite distraction free text editor. Preview your Markdown or Haml code in your web browser, generate Html and automatically optimise your images when you're done. No more time wasted clicking through endless menus and prompts, fumbling around with bloated word processors in attempts to structure, format, resize, or drop some thing in place then drag it around. Documentr makes generating hierarchical documentation fast and enjoyable.
+Generate Html documentation from Markdown/Haml with ease, from the comfort of your favourite distraction free text editor. Preview your Markdown/Haml code in your web browser, generate Html and automatically optimise your images when you're done. No more time wasted clicking through endless menus and prompts, fumbling around with bloated word processors in attempts to structure, format, resize, or drop some thing in place then drag it around. Documentr makes generating hierarchical documentation fast and enjoyable.
 
 Documentr uses the [Middleman](https://middlemanapp.com/) static site generator written in Ruby, to generate hierarchical html documents. This makes Documentr extendable with support for multiple pages, layout templates, integrations, and much more! Anybody who is familiar with Ruby on Rails will find Documentr familiar to use.
 

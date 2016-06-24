@@ -8,7 +8,7 @@ copyright: ""
 sections:
 ---
 
-[<< index.html](/index.html)
+[<< index.html](index.html)
 
 # Markdown example file
 

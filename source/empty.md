@@ -12,6 +12,6 @@ sections:
 
 This is a new Documentr document.
 
-[<< index.html](/index.html)
+[<< index.html](index.html)
 
 ***
