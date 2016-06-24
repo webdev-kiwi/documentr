@@ -48,10 +48,6 @@ The source directory is your working directory, containing your source files the
 
 This file contains the config and settings for use by the generator. You should only need to touch this file if you are customising Documentr.
 
-### Gemfile
-
-Again, you should only need to touch this file if you are customising Documentr.
-
 ## Middleman server
 
 Start the Middleman development server, with default options by typing:
