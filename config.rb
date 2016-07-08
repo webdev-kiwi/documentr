@@ -48,10 +48,10 @@ end
 # end
 
 # image directory
-set :images_dir, 'images'
+set :images_dir, 'assets/images'
 
 # Haml settings
-set :haml, { :ugly => false, :format => :html5 }
+set :haml, { :ugly => true, :format => :html5 }
 
 # Markdown settings
 set :markdown_engine, :kramdown
@@ -65,10 +65,14 @@ configure :build do
   # Use relative URLs
   activate :relative_assets
 
+  # Minify asset files
+  activate :minify_css
+  activate :minify_javascript
+
   # Optimise images
   activate :imageoptim do |options|
     # Use a build manifest to prevent re-compressing images between builds
-    options.manifest = true
+    options.manifest = false
 
     # Silence problematic image_optim workers
     options.skip_missing_workers = true
